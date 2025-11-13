@@ -1,11 +1,14 @@
 package controller;
 
 import javax.swing.JOptionPane;
-import model.Cliente;
+import entity.Cliente;
+import service.ClienteService;
 import service.ClienteService;
 
 
 public class ClienteController {
+
+    private ClienteService clienteService = new ClienteService();
 
     public void cadastro () {
 
@@ -51,6 +54,23 @@ public class ClienteController {
             return false;
         }
 
+    }
+
+    public void listarClientes() {
+        clienteService.listarClientes();
+    }
+
+    public void buscarCliente(String nome) {
+        Cliente cliente = clienteService.buscarCliente(nome);
+        if (cliente != null) {
+            cliente.exibirDados();
+        } else {
+            System.out.println("Cliente não encontrado.");
+        }
+    }
+
+    public void removerCliente(String nome) {
+        clienteService.removerCliente(nome);
     }
 
 
