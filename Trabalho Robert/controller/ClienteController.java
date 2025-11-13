@@ -16,8 +16,8 @@ public class ClienteController {
         int idade1 = Integer.parseInt(javax.swing.JOptionPane.showInputDialog("Informe sua idade: "));
         String empresa1 = javax.swing.JOptionPane.showInputDialog("Qual seu plano de saúde? ");
 
-        ClienteService clienteservice = new ClienteService();
-        Cliente cliente = clienteservice.cadastrarCliente(nome1,idade1,empresa1);
+
+        Cliente cliente = clienteService.cadastrarCliente(nome1,idade1,empresa1);
 
         boolean fazEmCasa1 = fazEmCasa(cliente);
         cliente.setFazEmCasa(fazEmCasa1);
@@ -62,10 +62,10 @@ public class ClienteController {
 
     public void buscarCliente(String nome) {
         Cliente cliente = clienteService.buscarCliente(nome);
-        if (cliente != null) {
+        if (clienteService.buscarCliente(nome) != null) {
             cliente.exibirDados();
         } else {
-            System.out.println("Cliente não encontrado.");
+            System.out.println("\nCliente não encontrado.\n");
         }
     }
 

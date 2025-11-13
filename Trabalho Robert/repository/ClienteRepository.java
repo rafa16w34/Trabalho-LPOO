@@ -20,6 +20,7 @@ public class ClienteRepository {
     public Cliente buscarPorNome(String nome) {
         for (Cliente c : clientes) {
             if (c.getNome().equalsIgnoreCase(nome)) {
+                System.out.println("\nCliente encontrado!\n");
                 return c;
             }
         }
