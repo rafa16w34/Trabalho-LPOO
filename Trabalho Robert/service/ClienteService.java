@@ -1,6 +1,6 @@
 package service;
 
-import model.Cliente;
+import entity.Cliente;
 import repository.ClienteRepository;
 
 
@@ -15,6 +15,8 @@ public class ClienteService {
         if (idade >= 60) {
             System.out.println("Cliente com prioridade no atendimento (idoso).");
         }
+
+        clienteRepository.adicionar(cliente);
 
         return cliente;
 

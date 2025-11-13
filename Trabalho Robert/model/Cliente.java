@@ -1,10 +1,10 @@
-package model;
+package entity;
 
 public class Cliente{
 
     private String nome;
     private int idade;
-    private String empresa;
+    public String empresa;
     private boolean convenio;
     private boolean fazEmCasa;
     private boolean prioridadeIdoso;
